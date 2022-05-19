@@ -1,0 +1,35 @@
+@model List<ItemPedido>
+
+<h2>
+    Listagem de pedidos
+</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+        </tr>
+
+
+    </thead>
+
+    <tbody>
+
+        @foreach (ItemPedido item in Model )
+        {
+            
+         <tr>
+            <td>@item.descricao</td>
+            <td>@item.quantidade</td>
+            <td>@item.valor</td>
+        </tr>
+        }
+
+    </tbody>
+
+
+</table>
+
+<p> Total de pedidos: @Dados.PedidoAtual.TotalizaPedido() </p>
